@@ -1,0 +1,42 @@
+<div *ngIf="(book$ | async) as book">
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <img [src]="book.imgUrl" alt="" class="card-img">
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card text-center">
+                <div class="card-header">
+                    <div class="d-flux justify-content-between">
+                        <span class="card-title h3 mr-5">{{book.title}}</span>
+                        <span class="card-subtitle h4">{{book.author}}</span>
+                    </div>
+
+                    <p class="lead">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Est expedita commodi fuga
+                        eius, nostrum recusandae. Nesciunt tempore facilis illo ex, ut quasi excepturi consequuntur
+                        accusantium. Nulla distinctio illum commodi eius?</p>
+
+
+                </div>
+                <div class="card-footer">
+                    <div class="d-flex justify-content-between">
+                        <span class="card-subtitle">${{book.price}}</span>
+                        <span class="card-subtitle">{{book.author}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row my-2">
+        <div class="col">
+            <button class="btn btn-primary me-3" (click)="addToCart(book)">Add to Cart</button>
+            <button class="btn btn-secondary me-3">View Cart</button>
+            <button class="btn btn-info" [routerLink]="['/']">Continue Shopping</button>
+        </div>
+
+    </div>
+
+</div>
